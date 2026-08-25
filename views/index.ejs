@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Reading Log</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <nav class="topnav">
+    <a href="/" class="topnav-brand">
+      <span class="topnav-plate">Catalog</span>
+      <span class="topnav-name">The Reading Log</span>
+    </a>
+    <div class="topnav-links">
+      <a href="/" class="topnav-link" aria-current="page">Drawer</a>
+      <a href="/post" class="topnav-link">File a Book</a>
+    </div>
+  </nav>
+
+  <header class="drawer-front">
+    <span class="plate">Non&#8209;Fiction &middot; Reviewed</span>
+    <h1 class="title">The Reading Log</h1>
+    <p class="subtitle">Every non-fiction book I've finished, what I rated it, and the note I made so I don't forget it again.</p>
+    <div class="drawer-pull" aria-hidden="true"></div>
+  </header>
+
+  <nav class="guides" aria-label="Sort books">
+    <button class="guide-tab" aria-pressed="true" data-sort="recent">Most Recent</button>
+    <button class="guide-tab" aria-pressed="false" data-sort="rating">Top Rated</button>
+    <button class="guide-tab" aria-pressed="false" data-sort="title">A &ndash; Z</button>
+  </nav>
+
+  <div class="search-slip">
+    <input type="text" id="search" placeholder="Search title or author&hellip;" aria-label="Search books">
+  </div>
+
+  <main class="drawer-body">
+    <div class="grid" id="grid">
+   
+    </div>
+  </main>
+
+  <footer>Drawer 1 of 1 &middot; Add a book to file it here</footer>
+
+  <div class="book-overlay" id="bookOverlay" aria-hidden="true">
+    <div class="book-overlay-cover-wrap">
+      <img class="book-overlay-cover" id="ovCover" alt="">
+      <div class="book-overlay-cover book-overlay-cover--blank" id="ovCoverBlank" aria-hidden="true">No cover</div>
+    </div>
+    <div class="book-overlay-body">
+      <span class="card-detail-label">Full Entry</span>
+      <h3 class="book-overlay-title" id="ovTitle"></h3>
+      <p class="book-overlay-author" id="ovAuthor"></p>
+      <p class="book-overlay-note" id="ovNote"></p>
+      <div class="book-overlay-grid">
+        <div class="book-overlay-field">
+          <span class="book-overlay-field-label">Rating</span>
+          <span class="stamp" id="ovRating"></span>
+        </div>
+        <div class="book-overlay-field">
+          <span class="book-overlay-field-label">Filed</span>
+          <span id="ovDate"></span>
+        </div>
+        <div class="book-overlay-field" id="ovIsbnField">
+          <span class="book-overlay-field-label">ISBN</span>
+          <span id="ovIsbn"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    window.__BOOKS__ = <%- JSON.stringify(books) %>;
+  </script>
+  <script src="/index.js"></script>
+</body>
+</html>

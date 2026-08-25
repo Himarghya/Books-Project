@@ -1,0 +1,8 @@
+const books = [
+  { title: "Sapiens", author: "Yuval Noah Harari", isbn: "9780062316097", cover: null, rating: 5, date: "2026-06-02", note: "The section on shared myths reframed how I think about money, nations, and religion as the same trick." },
+  { title: "Atomic Habits", author: "James Clear", isbn: "9780735211292", cover: null, rating: 4, date: "2026-05-14", note: "Habit stacking is the one idea I still use daily: attach the new habit to an existing one." },
+  { title: "Deep Work", author: "Cal Newport", isbn: "9781455586691", cover: null, rating: 4, date: "2026-04-30", note: "Convinced me to block two hours a day with no Slack, no email, no tabs." },
+  { title: "Thinking, Fast and Slow", author: "Daniel Kahneman", isbn: "9780374533557", cover: null, rating: 5, date: "2026-03-11", note: "System 1 vs System 2 is now how I explain half my bad decisions to myself." },
+  { title: "The Lean Startup", author: "Eric Ries", isbn: "9780307887894", cover: null, rating: 3, date: "2026-02-20", note: "Build-measure-learn is simple on paper, much harder to actually run weekly." },
+  { title: "Man's Search for Meaning", author: "Viktor E. Frankl", isbn: "9780807014295", cover: null, rating: 5, date: "2025-12-08", note: "Short, and the calmest book I've ever read about suffering. Reread yearly." },
+];

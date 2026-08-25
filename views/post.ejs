@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File a New Book &mdash; The Reading Log</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="post.css">
+</head>
+<body>
+
+  <nav class="topnav">
+    <a href="/" class="topnav-brand">
+      <span class="topnav-plate">Catalog</span>
+      <span class="topnav-name">The Reading Log</span>
+    </a>
+    <div class="topnav-links">
+      <a href="/" class="topnav-link">Drawer</a>
+      <a href="/post" class="topnav-link" aria-current="page">File a Book</a>
+    </div>
+  </nav>
+
+  <div class="page">
+    <a href="/Home" class="back-link">&larr; Back to the HomePage</a>
+
+    <header class="card-header">
+      <span class="plate">New Entry</span>
+      <h1 class="title">File a New Book</h1>
+      <p class="subtitle">Fill out the card. Add a cover photo, or leave the ISBN in and one gets fetched for you.</p>
+    </header>
+
+    <form action="/books" method="POST"  class="post-form">
+
+      <label class="field">
+        <span>Title</span>
+        <input type="text" name="title" placeholder="e.g. Endurance" required>
+      </label>
+
+      <label class="field">
+        <span>Author</span>
+        <input type="text" name="author" placeholder="e.g. Alfred Lansing" required>
+      </label>
+
+      <div class="field-row">
+        <label class="field">
+          <span>Rating (1&ndash;5)</span>
+          <input type="number" name="rating" min="1" max="5" value="5" required>
+        </label>
+        <label class="field">
+          <span>Date read</span>
+          <input type="date" name="date" required>
+        </label>
+      </div>
+
+      <label class="field">
+        <span>ISBN <em>(optional &mdash; fetches a cover automatically)</em></span>
+        <input type="text" name="isbn" placeholder="e.g. 9780062316097">
+      </label>
+
+      <label class="field">
+        <span>Cover photo <em>(optional &mdash; overrides the ISBN cover)</em></span>
+        <input type="file" name="cover" accept="image/*">
+      </label>
+
+      <label class="field">
+        <span>Note</span>
+        <textarea name="note" rows="4" placeholder="What's worth remembering?"></textarea>
+      </label>
+
+      <div class="form-actions">
+        <a href="/" class="ghost-btn">Cancel</a>
+        <button type="submit" class="file-btn" >File this book</button>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+</html>

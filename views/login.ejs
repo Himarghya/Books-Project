@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borrower Login · The Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <nav class="topnav">
+    <a class="topnav-brand" href="/">
+      <span class="topnav-plate">BOOKS &middot; 001</span>
+      <span class="topnav-name">The Card Catalog</span>
+    </a>
+    <div class="topnav-links">
+      <a class="topnav-link" href="/">Drawer</a>
+      <a class="topnav-link" href="/register">Register</a>
+      <a class="topnav-link" aria-current="page" href="/login">Login</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <a class="back-link" href="/">&larr; Back to the drawer</a>
+
+    <div class="card-header">
+      <span class="plate">Restricted Access</span>
+      <h1 class="title">Borrower Login</h1>
+      <p class="subtitle">Present your card number to enter the reading room.</p>
+    </div>
+
+    <!-- Signature element: an index card being pulled from its slot, 
+         stamped, with a punch hole matching the rest of the site's cards -->
+    <div class="login-slot">
+      <div class="login-card">
+        <span class="stamp-corner">Members<br>Only</span>
+
+        <% if (typeof error !== 'undefined' && error) { %>
+          <p class="form-error"><%= error %></p>
+        <% } %>
+
+        <form class="login-form" action="/login" method="POST" autocomplete="on">
+
+          <div class="field">
+            <label for="cardNumber">Card No. <em>(email or username)</em></label>
+            <input
+              type="text"
+              id="cardNumber"
+              name="cardNumber"
+              placeholder="e.g. reader@library.com"
+              autocomplete="username"
+              required
+              autofocus
+            >
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="password-wrap">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+                autocomplete="current-password"
+                required
+              >
+              <button type="button" class="peek-btn" id="peekBtn" aria-label="Show password">view</button>
+            </div>
+          </div>
+
+          <div class="field-inline">
+            <label class="check-field">
+              <input type="checkbox" name="remember" id="remember">
+              <span class="check-box" aria-hidden="true"></span>
+              Keep my card on file
+            </label>
+            <a class="text-link" href="/forgot-password">Forgot password?</a>
+          </div>
+
+          <div class="form-actions form-actions--stack">
+            <button type="submit" class="file-btn file-btn--wide">Check In &rarr;</button>
+          </div>
+
+        </form>
+
+        <div class="divider"><span>or</span></div>
+
+        <a class="ghost-btn ghost-btn--wide" href="/register">New reader? Register a card</a>
+      </div>
+
+      <div class="slot-shadow" aria-hidden="true"></div>
+    </div>
+  </main>
+
+  <footer>Handled with care &middot; est. this year &middot; return by due date</footer>
+
+  <script>
+    // Simple show/hide password toggle — no framework required
+    const peekBtn = document.getElementById('peekBtn');
+    const pwd = document.getElementById('password');
+    if (peekBtn && pwd) {
+      peekBtn.addEventListener('click', () => {
+        const isHidden = pwd.type === 'password';
+        pwd.type = isHidden ? 'text' : 'password';
+        peekBtn.textContent = isHidden ? 'hide' : 'view';
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="post.css">
+</head>
+<body>
+
+  <nav class="topnav">
+    <a class="topnav-brand" href="/">
+      <span class="topnav-plate">Est. Archive</span>
+      <span class="topnav-name">The Postbox</span>
+    </a>
+    <div class="topnav-links">
+      <a class="topnav-link" href="/login">Sign In</a>
+      <a class="topnav-link" href="/register" aria-current="page">Register</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <a class="back-link" href="/">&larr; Back to drawer</a>
+
+    <div class="card-header">
+      <span class="plate">New Member</span>
+      <h1 class="title">Create an Account</h1>
+      <p class="subtitle">Fill out the card below and file yourself into the archive.</p>
+    </div>
+
+    <% if (typeof error !== 'undefined' && error) { %>
+      <p class="form-error"><%= error %></p>
+    <% } %>
+
+    <form class="post-form" action="/register" method="POST">
+
+      <label class="field">
+        Full Name
+        <input type="text" name="fullName" placeholder="Jane Doe" value="<%= typeof fullName !== 'undefined' ? fullName : '' %>" required>
+      </label>
+
+      <label class="field">
+        Username
+        <input type="text" name="username" placeholder="janedoe" value="<%= typeof username !== 'undefined' ? username : '' %>" required>
+      </label>
+
+      <label class="field">
+        Email Address
+        <input type="email" name="email" placeholder="jane@example.com" value="<%= typeof email !== 'undefined' ? email : '' %>" required>
+      </label>
+
+      <div class="field-row">
+        <label class="field">
+          Password
+          <input type="password" name="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required minlength="8">
+        </label>
+      </div>
+
+      <label class="field">
+        Portrait <em>(optional)</em>
+        <input type="file" name="avatar" accept="image/*">
+      </label>
+
+      <div class="form-actions">
+        <a class="ghost-btn" href="/login">Already Filed?</a>
+        <button class="file-btn" type="submit">Stamp &amp; Submit</button>
+      </div>
+
+    </form>
+  </main>
+
+</body>
+</html>

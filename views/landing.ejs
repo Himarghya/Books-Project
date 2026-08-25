@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Card Catalog · A Home For Your Reading</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href=" landing.css">
+</head>
+<body>
+
+  <nav class="topnav">
+    <a class="topnav-brand" href="/">
+      <span class="topnav-plate">BOOKS &middot; 001</span>
+      <span class="topnav-name">The Card Catalog</span>
+    </a>
+    <div class="topnav-links">
+      <a class="topnav-link" href="/login">Login</a>
+      <a class="topnav-link" href="/register">Register</a>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero">
+    <span class="plate">Est. This Year</span>
+    <h1 class="hero-title">A drawer<br>for every book<br>you've read.</h1>
+    <p class="hero-subtitle">
+      Log what you finish, stamp a rating on it, and leave a note for
+      future-you &mdash; all filed away like an old library catalog,
+      not buried in a spreadsheet.
+    </p>
+    <div class="hero-actions">
+      <a class="file-btn file-btn--lg" href="/register">Start Your Shelf &rarr;</a>
+      <a class="ghost-btn ghost-btn--lg" href="/login">I have a card</a>
+    </div>
+
+    <!-- Signature element: a card-catalog cabinet, one drawer left
+         ajar, with a few index cards caught mid-escape. Built in
+         pure CSS to match the cards used throughout the site. -->
+    <div class="cabinet" aria-hidden="true">
+      <div class="peek-card peek-card--1">
+        <span class="peek-title">The Salt Path</span>
+        <span class="peek-author">R. Winn</span>
+      </div>
+      <div class="peek-card peek-card--2">
+        <span class="peek-title">Piranesi</span>
+        <span class="peek-author">S. Clarke</span>
+      </div>
+      <div class="peek-card peek-card--3">
+        <span class="peek-title">Klara and the Sun</span>
+        <span class="peek-author">K. Ishiguro</span>
+      </div>
+
+      <div class="drawer drawer--open">
+        <span class="drawer-pull-label">A &ndash; F</span>
+      </div>
+      <div class="drawer">
+        <span class="drawer-pull-label">G &ndash; M</span>
+      </div>
+      <div class="drawer">
+        <span class="drawer-pull-label">N &ndash; S</span>
+      </div>
+      <div class="drawer">
+        <span class="drawer-pull-label">T &ndash; Z</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== GUIDE / FEATURES ===================== -->
+  <section class="guides-section">
+    <div class="section-head">
+      <span class="plate">How It's Filed</span>
+      <h2 class="section-title">Three drawers, one shelf.</h2>
+    </div>
+
+    <div class="guide-grid">
+      <div class="guide-card">
+        <span class="guide-number">I.</span>
+        <h3 class="guide-title">File a Book</h3>
+        <p class="guide-text">Add the title, author, and cover the moment you close the back page &mdash; before the details fade.</p>
+      </div>
+      <div class="guide-card">
+        <span class="guide-number">II.</span>
+        <h3 class="guide-title">Stamp a Rating</h3>
+        <p class="guide-text">Give it a rubber-stamp verdict and a note on what stuck with you, for the next time you forget.</p>
+      </div>
+      <div class="guide-card">
+        <span class="guide-number">III.</span>
+        <h3 class="guide-title">Browse the Drawer</h3>
+        <p class="guide-text">Sort and search your whole shelf at a glance, the way a real catalog was always meant to work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CLOSING CTA ===================== -->
+  <section class="closing-cta">
+    <span class="plate">Ready When You Are</span>
+    <h2 class="closing-title">Your shelf is waiting to be filed.</h2>
+    <a class="file-btn file-btn--lg" href="/register">Register a Card &rarr;</a>
+  </section>
+
+  <footer>Handled with care &middot; est. this year &middot; return by due date</footer>
+
+</body>
+</html>
